@@ -34,7 +34,7 @@ const Footer = (props: IFooter) => {
             {item.links.map((linkItem, index) => {
               return (
                 <ListItem key={index} disableGutters>
-                  <Box fontFamily="RobotoThin" fontWeight="300" fontSize="14px">
+                  <Box fontFamily="RobotoThin" fontWeight="600" fontSize="14px">
                     <StyledLink placeToRender="footer-link" href={linkItem.link}>
                       {linkItem.title}
                     </StyledLink>
@@ -60,7 +60,7 @@ const Footer = (props: IFooter) => {
           {item.children &&
             item.children.slice(0, 3).map((child, index) => {
               return (
-                <Box key={index} mt={2} fontFamily="RobotoThin" fontWeight="300" fontSize="14px">
+                <Box key={index} mt={2} fontFamily="RobotoThin" fontWeight="600" fontSize="14px">
                   <StyledLink placeToRender="footer-link" href={child.link}>
                     {child.title}
                   </StyledLink>
@@ -164,7 +164,7 @@ const Footer = (props: IFooter) => {
         <StyledDivider />
         <Box mt={2}>
           <Grid container justify="center" alignItems="center">
-            <StyledCopyright component="span">&copy;2020-2020 {translate('MegaMall_Footer_Copyright', 'E-commerce Сите права задржани.')}</StyledCopyright>
+            <StyledCopyright component="span">&copy;2020-2020 {translate('MegaMall_Footer_Copyright', 'MegaMall | Сите права се задржани.')}</StyledCopyright>
           </Grid>
         </Box>
       </StyledFooter>

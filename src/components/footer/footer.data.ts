@@ -19,7 +19,7 @@ const footerItems: IFooterItem[] = [
     },
     links: [
       {
-        title: translate('MegaMall_Footer_WebSpot', `ВЕБСПОТ | ТА ВЕБСПОТ ДОО`),
+        title: translate('MegaMall_Footer_WebSpot', 'MegaMall DOO'),
         link: '#'
       }
     ]
