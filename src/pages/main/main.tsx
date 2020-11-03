@@ -4,11 +4,9 @@ import { RouteComponentProps } from 'react-router-dom';
 
 import { AppDispatch } from '../..';
 import ApplicationState from '../../store/application-state';
-import { Container, Box, Grid, Hidden } from '@material-ui/core';
+import { Container, Box } from '@material-ui/core';
 
 import { MainSlider } from './components/main-slider';
-import { Banner } from '../../components/banner';
-import { GiftCardGrid } from './components/gift-card-grid';
 import LatestProductContainer from './components/product-grid/product-grid';
 import CardSliderContainer from './components/card-slider/card-slider';
 import CategoryGridContainer from './components/category-grid/category-grid';
