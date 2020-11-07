@@ -10,6 +10,7 @@ import { Box } from '@material-ui/core';
 import LoadingScreen from 'react-loading-screen';
 import DetailedProductView from 'pages/detailed-view/components/detailed-view/detailed-product-view';
 import _DetailedProductPage from 'pages/detailed-view/detailed-product';
+import FinancialButton from 'pages/main/components/financial-button/financial-button';
 
 interface IApp {
   applicationBootstraped: boolean;
@@ -42,6 +43,7 @@ const _App: React.FC<IApp> = (props: IApp) => {
         <>
           <Suspense fallback={renderLoader()}>
             <Header />
+            <FinancialButton />
             <Box height="100%" minHeight="100vh" display="flex" flexDirection="column">
               <Switch>
                 <Route exact path={ROUTES.MAIN} component={MainPage} />
