@@ -22,7 +22,7 @@ const ProductItem = (props: IProductItem) => {
       <StyledGrid container spacing={2}>
         <Grid container item xs={12}>
           {/* Desktop product item */}
-          <Hidden mdDown>
+          <Hidden smDown>
             {/* Desktop image */}
             {props.img && (
               <Grid item xs={2}>
