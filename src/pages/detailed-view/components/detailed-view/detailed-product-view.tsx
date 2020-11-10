@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Grid, Typography, Card, CardContent, Button, CardActions, Box, Hidden, List, ListItem } from '@material-ui/core';
+import { Grid, Typography, Card, CardContent, Button, CardActions, Box, Hidden, List, ListItem, Link } from '@material-ui/core';
 import { StyledImage, StyledStickyGridItem, StyledGridContainer, StyledCardContent, StyledBox, StyledLogo } from './detailed-product-view.styles';
 import ProductItemList from '../../../product-list/components/display/product-item-list/product-item-list';
 import { translate } from 'lib/translate';
@@ -10,6 +10,7 @@ import ApplicationState from 'store/application-state';
 import { connect } from 'react-redux';
 import { RouteComponentProps, withRouter } from 'react-router';
 import { formatPrice } from 'utils/helpers/price-formatter';
+import { Stores } from 'lib/enums';
 
 interface IProps extends RouteComponentProps<{ id: string }> {
   data: Models.Product.Model;
@@ -20,6 +21,10 @@ const DetailedProductView = (props: IProps) => {
   useEffect(() => {
     props.onInit(props.match.params.id);
   }, []);
+
+  const findStoreLogo = (storeId: number) => {
+    return `./../../../../assets/images/stores/${Stores[storeId].toLocaleLowerCase()}.svg`;
+  };
 
   return (
     <>
@@ -53,7 +58,9 @@ const DetailedProductView = (props: IProps) => {
                   <Typography variant="h3" gutterBottom>
                     {formatPrice(props.data.price) + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
                   </Typography>
-                  <StyledLogo src="/src/assets/images/product-list/logo-btns/Anhoch.png" />
+                  <Link href={props.data.storeLink}>
+                    <StyledLogo src={props.data.store ? findStoreLogo(props.data.store) : findStoreLogo(1)} />
+                  </Link>
                   {/* TODO: add logo of company here as btn */}
                 </StyledBox>
               </StyledCardContent>

@@ -18,6 +18,7 @@ import { ListTypes, Stores } from 'lib/enums';
 import { shopsData } from './shops-list/shops-list.data';
 import { SubcategoryCard } from 'pages/category/components/subcategory-card';
 import { MenuItem } from 'lib/data';
+import { findStoreLogo } from 'utils/helpers/find-store-logo';
 
 interface IProps {
   data: Models.Product.Model[];
@@ -68,10 +69,6 @@ const Display = (props: IProps) => {
   useEffect(() => {
     calculatePages();
   }, []);
-
-  const findStoreLogo = (storeId: number) => {
-    return `./../../../../assets/images/stores/${Stores[storeId].toLocaleLowerCase()}.svg`;
-  };
 
   return (
     <>
