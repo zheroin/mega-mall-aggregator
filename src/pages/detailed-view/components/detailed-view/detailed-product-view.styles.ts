@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { Box, Grid, CardContent } from '@material-ui/core';
+import { Box, Grid, CardContent, Link } from '@material-ui/core';
 
 const StyledImage = styled.img`
   min-width: 450px;
@@ -57,4 +57,8 @@ const StyledLogo = styled.img`
   }
 `;
 
-export { StyledImage, StyledGridContainer, StyledStickyGridItem, StyledCardContent, StyledBox, StyledLogo };
+const StyledLink = styled(Link)`
+  max-width: 160px;
+  width: 100%;
+`;
+export { StyledImage, StyledGridContainer, StyledStickyGridItem, StyledCardContent, StyledBox, StyledLogo, StyledLink };

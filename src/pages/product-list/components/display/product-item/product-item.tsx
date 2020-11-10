@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Typography, Grid, Hidden, createStyles, makeStyles, Theme, Link } from '@material-ui/core';
 import { Box } from '@material-ui/core';
-import { StyledImage, StyledLogo, StyledGrid, StyledPriceBox, MobileStyledPriceBox, StyledTextBox } from './product-item.styles';
+import { StyledImage, StyledLogo, StyledGrid, StyledPriceBox, MobileStyledPriceBox, StyledTextBox, StyledLink } from './product-item.styles';
 import { translate } from 'lib/translate';
 import { formatPrice } from 'utils/helpers/price-formatter';
 
@@ -53,9 +53,9 @@ const ProductItem = (props: IProductItem) => {
               )}
             </Grid>
             <Grid container item xs={2}>
-              <Box>
+              <StyledLink>
                 <StyledLogo src={props.logo} />
-              </Box>
+              </StyledLink>
             </Grid>
             {/* End desktop product item */}
           </Hidden>
@@ -93,17 +93,17 @@ const ProductItem = (props: IProductItem) => {
             {props.discountPrice ? (
               <Grid container item xs={12}>
                 <Box mt={5} justifyContent="flex-end" alignContent="flex-end" alignItems="flex-end">
-                  <Link href={props.storeLink}>
+                  <StyledLink href={props.storeLink}>
                     <StyledLogo src={props.logo} />
-                  </Link>
+                  </StyledLink>
                 </Box>
               </Grid>
             ) : (
               <Grid container item xs={2}>
                 <Box>
-                  <Link href={props.storeLink}>
+                  <StyledLink href={props.storeLink}>
                     <StyledLogo src={props.logo} />
-                  </Link>
+                  </StyledLink>
                 </Box>
               </Grid>
             )}

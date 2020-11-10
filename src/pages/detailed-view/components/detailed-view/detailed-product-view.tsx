@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { Grid, Typography, Card, CardContent, Button, CardActions, Box, Hidden, List, ListItem, Link } from '@material-ui/core';
-import { StyledImage, StyledStickyGridItem, StyledGridContainer, StyledCardContent, StyledBox, StyledLogo } from './detailed-product-view.styles';
+import React, { useEffect } from 'react';
+import { Grid, Typography, Card, Box, Hidden } from '@material-ui/core';
+import { StyledImage, StyledStickyGridItem, StyledGridContainer, StyledCardContent, StyledBox, StyledLogo, StyledLink } from './detailed-product-view.styles';
 import ProductItemList from '../../../product-list/components/display/product-item-list/product-item-list';
 import { translate } from 'lib/translate';
 
@@ -58,9 +58,9 @@ const DetailedProductView = (props: IProps) => {
                   <Typography variant="h3" gutterBottom>
                     {formatPrice(props.data.price) + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
                   </Typography>
-                  <Link href={props.data.storeLink}>
-                    <StyledLogo src={props.data.store ? findStoreLogo(props.data.store) : findStoreLogo(1)} />
-                  </Link>
+                  <StyledLink href={props.data.storeLink}>
+                    <StyledLogo src={props.data.store ? findStoreLogo(props.data.store) : '/src/assets/images/main/Mega-m-original.svg'} />
+                  </StyledLink>
                   {/* TODO: add logo of company here as btn */}
                 </StyledBox>
               </StyledCardContent>

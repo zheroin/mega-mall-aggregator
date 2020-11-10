@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Grid, Box } from '@material-ui/core';
+import { Grid, Box, Link } from '@material-ui/core';
 
 const StyledImage = styled.img`
   max-width: 217px;
@@ -63,4 +63,9 @@ const StyledTextBox = styled(Box)`
   text-decoration: none;
 `;
 
-export { StyledImage, StyledLogo, StyledGrid, StyledPriceBox, MobileStyledPriceBox, StyledTextBox };
+const StyledLink = styled(Link)`
+  max-width: 160px;
+  width: 100%;
+`;
+
+export { StyledImage, StyledLogo, StyledGrid, StyledPriceBox, MobileStyledPriceBox, StyledTextBox, StyledLink };
