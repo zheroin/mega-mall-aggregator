@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Typography, Grid, Hidden, createStyles, makeStyles, Theme } from '@material-ui/core';
+import { Typography, Grid, Hidden, createStyles, makeStyles, Theme, Link } from '@material-ui/core';
 import { Box } from '@material-ui/core';
 import { StyledImage, StyledLogo, StyledGrid, StyledPriceBox, MobileStyledPriceBox, StyledTextBox } from './product-item.styles';
 import { translate } from 'lib/translate';
@@ -12,8 +12,9 @@ export interface IProductItem {
   title: string;
   price: string;
   discountPrice?: string;
-  description: string;
+  description?: string;
   logo: string;
+  storeLink: string;
 }
 
 const ProductItem = (props: IProductItem) => {
@@ -92,13 +93,17 @@ const ProductItem = (props: IProductItem) => {
             {props.discountPrice ? (
               <Grid container item xs={12}>
                 <Box mt={5} justifyContent="flex-end" alignContent="flex-end" alignItems="flex-end">
-                  <StyledLogo src={props.logo} />
+                  <Link href={props.storeLink}>
+                    <StyledLogo src={props.logo} />
+                  </Link>
                 </Box>
               </Grid>
             ) : (
               <Grid container item xs={2}>
                 <Box>
-                  <StyledLogo src={props.logo} />
+                  <Link href={props.storeLink}>
+                    <StyledLogo src={props.logo} />
+                  </Link>
                 </Box>
               </Grid>
             )}

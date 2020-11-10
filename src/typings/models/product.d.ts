@@ -6,5 +6,7 @@ declare module Models.Product {
     price: string;
     discountPrice?: string;
     imageSource: string;
+    store: number;
+    storeLink: string;
   }
 }
