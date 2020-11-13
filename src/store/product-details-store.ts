@@ -8,7 +8,7 @@ export interface ProductDetailsStore {
 }
 
 export const initialState: ProductDetailsStore = {
-  data: { id: '', link: '', name: '', price: '', imageSource: '' }
+  data: { id: '', link: '', name: '', price: '', imageSource: '', store: 1, storeLink: '' }
 };
 
 const slice = createSlice({
