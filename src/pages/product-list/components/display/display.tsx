@@ -14,10 +14,11 @@ import { StyledBox, StyledLink, StyledPagination } from './display.styles';
 import { getProducts, changePageOptions } from 'store/product-list-store';
 import { PageOptions } from 'lib/models';
 import { displayData } from './product-item-list/product-item-list.data';
-import { ListTypes } from 'lib/enums';
+import { ListTypes, Stores } from 'lib/enums';
 import { shopsData } from './shops-list/shops-list.data';
 import { SubcategoryCard } from 'pages/category/components/subcategory-card';
 import { MenuItem } from 'lib/data';
+import { findStoreLogo } from 'utils/helpers/find-store-logo';
 
 interface IProps {
   data: Models.Product.Model[];
@@ -93,8 +94,9 @@ const Display = (props: IProps) => {
                               price={product.price === '' ? '0' : product.price}
                               discountPrice={product.discountPrice}
                               description={''}
-                              logo={''}
+                              logo={findStoreLogo(product.store)}
                               link={product.link}
+                              storeLink={product.storeLink}
                             />
                           </StyledBox>
                         </ListItem>

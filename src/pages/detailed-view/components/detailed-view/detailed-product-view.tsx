@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { Grid, Typography, Card, CardContent, Button, CardActions, Box, Hidden, List, ListItem } from '@material-ui/core';
-import { StyledImage, StyledStickyGridItem, StyledGridContainer, StyledCardContent, StyledBox, StyledLogo } from './detailed-product-view.styles';
+import React, { useEffect } from 'react';
+import { Grid, Typography, Card, Box, Hidden, Link } from '@material-ui/core';
+import { StyledImage, StyledStickyGridItem, StyledGridContainer, StyledCardContent, StyledBox, StyledLogo, StyledLink, StyledStoreLink } from './detailed-product-view.styles';
 import ProductItemList from '../../../product-list/components/display/product-item-list/product-item-list';
 import { translate } from 'lib/translate';
 
@@ -10,6 +10,7 @@ import ApplicationState from 'store/application-state';
 import { connect } from 'react-redux';
 import { RouteComponentProps, withRouter } from 'react-router';
 import { formatPrice } from 'utils/helpers/price-formatter';
+import { Stores } from 'lib/enums';
 
 interface IProps extends RouteComponentProps<{ id: string }> {
   data: Models.Product.Model;
@@ -20,6 +21,10 @@ const DetailedProductView = (props: IProps) => {
   useEffect(() => {
     props.onInit(props.match.params.id);
   }, []);
+
+  const findStoreLogo = (storeId: number) => {
+    return `./../../../../assets/images/stores/${Stores[storeId].toLocaleLowerCase()}.svg`;
+  };
 
   return (
     <>
@@ -39,9 +44,14 @@ const DetailedProductView = (props: IProps) => {
             <Card raised={true}>
               <StyledCardContent>
                 <Box pb={1}>
-                  <Typography variant="h4" gutterBottom>
-                    {props.data.name}
-                  </Typography>
+                  <Link href={props.data.link}>
+                    <Typography variant="h4" gutterBottom color="textPrimary">
+                      {props.data.name}
+                    </Typography>
+                    <StyledStoreLink href={props.data.link}>
+                      <Box textAlign="left">{translate('MegaMall_GoTo_Product', 'Види во продавница')}</Box>
+                    </StyledStoreLink>
+                  </Link>
                 </Box>
                 <Box pb={2}>
                   <Hidden mdDown>
@@ -53,7 +63,11 @@ const DetailedProductView = (props: IProps) => {
                   <Typography variant="h3" gutterBottom>
                     {formatPrice(props.data.price) + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
                   </Typography>
-                  <StyledLogo src="/src/assets/images/product-list/logo-btns/Anhoch.png" />
+
+                  <StyledLink href={props.data.storeLink}>
+                    <StyledLogo src={props.data.store ? findStoreLogo(props.data.store) : '/src/assets/images/main/Mega-m-original.svg'} />
+                    <StyledStoreLink href={props.data.storeLink}>{translate('MegaMall_GoTo_Store', 'Види продавница')}</StyledStoreLink>
+                  </StyledLink>
                   {/* TODO: add logo of company here as btn */}
                 </StyledBox>
               </StyledCardContent>

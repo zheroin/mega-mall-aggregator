@@ -453,7 +453,9 @@
       "MegaMall_Product_Price_Currency": "МКД",
       "MegaMall_Breadcrumbs_Home": "Почетна",
       "MegaMall_SimilarProducts_Heading": "Слични производи и останати продавници",
-      "MegaMall_Financial_Button": "Финансиско друштво"
+      "MegaMall_Financial_Button": "Финансиско друштво",
+      "MegaMall_GoTo_Store": "Види продавница",
+      "MegaMall_GoTo_Product": "Види во продавница"
     }
   },
   "en-GB": {
@@ -911,7 +913,9 @@
       "MegaMall_Product_Price_Currency": "MKD",
       "MegaMall_Breadcrumbs_Home": "Home",
       "MegaMall_SimilarProducts_Heading": "Similar products and other stores",
-      "MegaMall_Financial_Button": "Financial group"
+      "MegaMall_Financial_Button": "Financial group",
+      "MegaMall_GoTo_Store": "Visit store",
+      "MegaMall_GoTo_Product": "See this product in the store"
     }
   }
 }
