@@ -16,9 +16,9 @@ const StyledLogo = styled.img`
   max-width: 120px;
   width: 100%;
   max-height: 40px;
-  bottom: 15px;
-  right: 0;
-  border: 1px solid #d3d3d3;
+  bottom: 20px;
+  right: 7px;
+  box-shadow: 0px 0px 15px #d3d3d3;
   position: absolute;
 
   @media (max-width: 768px) {
@@ -31,9 +31,16 @@ const StyledLogo = styled.img`
 
 const StyledGrid = styled(Grid)`
   min-height: 170px;
+  transition: 0.3s;
 
   @media (max-width: 768px) {
     min-height: 140px;
+  }
+
+  &:hover {
+    div {
+      text-decoration: underline;
+    }
   }
 `;
 
@@ -68,4 +75,18 @@ const StyledLink = styled(Link)`
   width: 100%;
 `;
 
-export { StyledImage, StyledLogo, StyledGrid, StyledPriceBox, MobileStyledPriceBox, StyledTextBox, StyledLink };
+const StyledStoreLink = styled(Link)`
+  position: absolute;
+  bottom: 0;
+  right: 7px;
+  color: #0d1440;
+  font-family: 'Roboto-Regular', sans-serif;
+  font-size: 12px;
+  transition: 0.3s;
+
+  @media (max-width: 768px) {
+    font-size: 11px;
+  }
+`;
+
+export { StyledImage, StyledLogo, StyledGrid, StyledPriceBox, MobileStyledPriceBox, StyledTextBox, StyledLink, StyledStoreLink };

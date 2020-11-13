@@ -51,6 +51,9 @@ const StyledBox = styled(Box)`
 const StyledLogo = styled.img`
   max-width: 120px;
   width: 100%;
+  margin: 0 auto;
+  display: block;
+
   @media (max-width: 768px) {
     max-width: 100px;
     width: 100%;
@@ -61,4 +64,17 @@ const StyledLink = styled(Link)`
   max-width: 160px;
   width: 100%;
 `;
-export { StyledImage, StyledGridContainer, StyledStickyGridItem, StyledCardContent, StyledBox, StyledLogo, StyledLink };
+
+const StyledStoreLink = styled(Link)`
+  color: #0d1440;
+  font-family: 'Roboto-Regular', sans-serif;
+  font-size: 14px;
+  transition: 0.3s;
+  text-align: center;
+  display: block;
+
+  @media (max-width: 768px) {
+    font-size: 11px;
+  }
+`;
+export { StyledImage, StyledGridContainer, StyledStickyGridItem, StyledCardContent, StyledBox, StyledLogo, StyledLink, StyledStoreLink };

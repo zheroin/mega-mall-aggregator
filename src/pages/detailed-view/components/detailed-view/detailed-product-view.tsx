@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Grid, Typography, Card, Box, Hidden } from '@material-ui/core';
-import { StyledImage, StyledStickyGridItem, StyledGridContainer, StyledCardContent, StyledBox, StyledLogo, StyledLink } from './detailed-product-view.styles';
+import { StyledImage, StyledStickyGridItem, StyledGridContainer, StyledCardContent, StyledBox, StyledLogo, StyledLink, StyledStoreLink } from './detailed-product-view.styles';
 import ProductItemList from '../../../product-list/components/display/product-item-list/product-item-list';
 import { translate } from 'lib/translate';
 
@@ -60,6 +60,7 @@ const DetailedProductView = (props: IProps) => {
                   </Typography>
                   <StyledLink href={props.data.storeLink}>
                     <StyledLogo src={props.data.store ? findStoreLogo(props.data.store) : '/src/assets/images/main/Mega-m-original.svg'} />
+                    <StyledStoreLink href={props.data.storeLink}>{translate('MegaMall_GoTo_Store', 'Види продавница')}</StyledStoreLink>
                   </StyledLink>
                   {/* TODO: add logo of company here as btn */}
                 </StyledBox>
