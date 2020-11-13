@@ -12,7 +12,7 @@ export interface IProductItem {
   title: string;
   price: string;
   discountPrice?: string;
-  description: string;
+  description?: string;
   logo: string;
 }
 
