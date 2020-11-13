@@ -89,7 +89,7 @@ const Display = (props: IProps) => {
                           <StyledBox mt={1} mb={1}>
                             <ProductItem
                               key={product.id}
-                              img={product.imageSource || displayData[1].img}
+                              img={product.imageSource || displayData[1].imageSource}
                               title={product.name}
                               price={product.price === '' ? '0' : product.price}
                               discountPrice={product.discountPrice}

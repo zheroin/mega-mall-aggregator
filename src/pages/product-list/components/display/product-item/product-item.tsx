@@ -14,7 +14,7 @@ export interface IProductItem {
   discountPrice?: string;
   description?: string;
   logo: string;
-  storeLink: string;
+  storeLink?: string;
 }
 
 const ProductItem = (props: IProductItem) => {
@@ -76,14 +76,24 @@ const ProductItem = (props: IProductItem) => {
                 </Box>
               </Grid>
               <Grid container spacing={props.discountPrice ? 1 : 0}>
-                <Grid item xs={props.discountPrice ? 6 : 12}>
-                  {props.discountPrice && <MobileStyledPriceBox />}
-                  <Box fontFamily="OswaldMedium" fontSize="18px" color="#000000" mt={5}>
-                    {props.price + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
-                  </Box>
-                </Grid>
+                <Hidden smUp>
+                  <Grid item xs={props.discountPrice ? 6 : 12}>
+                    {props.discountPrice && <MobileStyledPriceBox />}
+                    <Box fontFamily="OswaldMedium" fontSize="18px" color="#000000" mt={5}>
+                      {props.price ? props.price + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД') : '0' + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
+                    </Box>
+                  </Grid>
+                </Hidden>
+                <Hidden only="xs">
+                  <Grid item xs={props.discountPrice && props.img ? 5 : 3}>
+                    {props.discountPrice && <MobileStyledPriceBox />}
+                    <Box fontFamily="OswaldMedium" fontSize="18px" color="#000000" mt={5}>
+                      {props.price ? props.price + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД') : '0' + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
+                    </Box>
+                  </Grid>
+                </Hidden>
                 {props.discountPrice && (
-                  <Grid item xs={6} offset-1>
+                  <Grid item xs={6}>
                     <Box fontFamily="OswaldMedium" fontSize="18px" color="#000000" mt={5}>
                       {props.discountPrice + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
                     </Box>
