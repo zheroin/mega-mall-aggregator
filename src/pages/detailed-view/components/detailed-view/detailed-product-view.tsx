@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Grid, Typography, Card, Box, Hidden } from '@material-ui/core';
+import { Grid, Typography, Card, Box, Hidden, Link } from '@material-ui/core';
 import { StyledImage, StyledStickyGridItem, StyledGridContainer, StyledCardContent, StyledBox, StyledLogo, StyledLink, StyledStoreLink } from './detailed-product-view.styles';
 import ProductItemList from '../../../product-list/components/display/product-item-list/product-item-list';
 import { translate } from 'lib/translate';
@@ -44,9 +44,14 @@ const DetailedProductView = (props: IProps) => {
             <Card raised={true}>
               <StyledCardContent>
                 <Box pb={1}>
-                  <Typography variant="h4" gutterBottom>
-                    {props.data.name}
-                  </Typography>
+                  <Link href={props.data.link}>
+                    <Typography variant="h4" gutterBottom color="textPrimary">
+                      {props.data.name}
+                    </Typography>
+                    <StyledStoreLink href={props.data.link}>
+                      <Box textAlign="left">{translate('MegaMall_GoTo_Product', 'Види во продавница')}</Box>
+                    </StyledStoreLink>
+                  </Link>
                 </Box>
                 <Box pb={2}>
                   <Hidden mdDown>
@@ -58,6 +63,7 @@ const DetailedProductView = (props: IProps) => {
                   <Typography variant="h3" gutterBottom>
                     {formatPrice(props.data.price) + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
                   </Typography>
+
                   <StyledLink href={props.data.storeLink}>
                     <StyledLogo src={props.data.store ? findStoreLogo(props.data.store) : '/src/assets/images/main/Mega-m-original.svg'} />
                     <StyledStoreLink href={props.data.storeLink}>{translate('MegaMall_GoTo_Store', 'Види продавница')}</StyledStoreLink>
