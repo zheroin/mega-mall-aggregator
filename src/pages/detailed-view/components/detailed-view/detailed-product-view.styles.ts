@@ -53,6 +53,7 @@ const StyledLogo = styled.img`
   width: 100%;
   margin: 0 auto;
   display: block;
+  box-shadow: 0px 0px 15px #d3d3d3;
 
   @media (max-width: 768px) {
     max-width: 100px;
