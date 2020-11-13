@@ -73,12 +73,12 @@ const ProductList = (props: IProps) => {
                   <Navigation categoryItem={categoryItem} subCategoryItem={subCategoryItem} />
                 </Grid>
               </Hidden>
-              <Hidden mdUp xsDown>
+              <Hidden xsDown>
                 <Grid item xs={8} lg={9} xl={10}>
                   <DisplayContainer subCategoryItem={subCategoryItem ? subCategoryItem : categoryItem} />
                 </Grid>
               </Hidden>
-              <Hidden smUp mdDown>
+              <Hidden smUp>
                 <Grid item xs={12} md={8} lg={9} xl={10}>
                   <DisplayContainer subCategoryItem={subCategoryItem ? subCategoryItem : categoryItem} />
                 </Grid>

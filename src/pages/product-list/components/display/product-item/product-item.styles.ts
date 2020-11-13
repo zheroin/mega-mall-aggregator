@@ -15,7 +15,7 @@ const StyledLogo = styled.img`
   max-width: 120px;
   width: 100%;
   max-height: 40px;
-  bottom: 20px;
+  bottom: 25px;
   right: 7px;
   box-shadow: 0px 0px 15px #d3d3d3;
   position: absolute;
@@ -76,9 +76,9 @@ const StyledLink = styled(Link)`
 
 const StyledStoreLink = styled(Link)`
   position: absolute;
-  bottom: 0;
+  bottom: 5px;
   right: 7px;
-  color: #0d1440;
+
   font-family: 'Roboto-Regular', sans-serif;
   font-size: 12px;
   transition: 0.3s;
