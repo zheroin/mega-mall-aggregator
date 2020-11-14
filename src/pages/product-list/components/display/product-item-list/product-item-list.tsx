@@ -18,6 +18,7 @@ import { connect } from 'react-redux';
 import { getLatestProducts } from 'store/main-store';
 import { PageOptions } from 'lib/models';
 import { changePageOptions } from 'store/product-list-store';
+import { findStoreLogo } from 'utils/helpers/find-store-logo';
 
 interface ShopsListProps {
   isPaging: 'prodList' | 'detailList';
@@ -124,9 +125,7 @@ const ProductItemList = (props: ShopsListProps) => {
           {props.data.map(val => (
             <ListItem key={val.id} button component={RouterLink} to={generatePath(ROUTES.PRODUCT, { id: val.id })} disableGutters={true} divider={true}>
               <StyledBox mt={1} mb={1}>
-
-                <ProductItem key={val.id} title={val.name} price={val.price} discountPrice={val.discountPrice} description={val.description} logo={val.logo} link={val.link} storeLink={val.storeLink} />
-
+                <ProductItem key={val.id} title={val.name} price={val.price} discountPrice={val.discountPrice} logo={findStoreLogo(val.store)} link={val.link} storeLink={val.storeLink} />
               </StyledBox>
             </ListItem>
           ))}
