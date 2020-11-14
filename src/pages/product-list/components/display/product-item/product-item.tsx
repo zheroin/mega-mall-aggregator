@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { Typography, Grid, Hidden, createStyles, makeStyles, Theme } from '@material-ui/core';
+import { Typography, Grid, Hidden, createStyles, makeStyles, Theme, Link } from '@material-ui/core';
 import { Box } from '@material-ui/core';
-import { StyledImage, StyledLogo, StyledGrid, StyledPriceBox, MobileStyledPriceBox, StyledTextBox } from './product-item.styles';
+import { StyledImage, StyledLogo, StyledGrid, StyledPriceBox, MobileStyledPriceBox, StyledTextBox, StyledLink, StyledStoreLink } from './product-item.styles';
 import { translate } from 'lib/translate';
 import { formatPrice } from 'utils/helpers/price-formatter';
 
@@ -14,6 +14,7 @@ export interface IProductItem {
   discountPrice?: string;
   description?: string;
   logo: string;
+  storeLink?: string;
 }
 
 const ProductItem = (props: IProductItem) => {
@@ -22,7 +23,7 @@ const ProductItem = (props: IProductItem) => {
       <StyledGrid container spacing={2}>
         <Grid container item xs={12}>
           {/* Desktop product item */}
-          <Hidden mdDown>
+          <Hidden smDown>
             {/* Desktop image */}
             {props.img && (
               <Grid item xs={2}>
@@ -33,28 +34,29 @@ const ProductItem = (props: IProductItem) => {
             )}
             <Grid container item xs={props.img ? 8 : 10}>
               <Grid item xs={12}>
-                <Box fontFamily="RobotoBold" fontSize="18px">
+                <Box fontFamily="RobotoBold" fontSize="18px" color="#000000" ml={1}>
                   {props.title.length > 100 ? props.title.substring(0, 100) + '...' : props.title}
                 </Box>
               </Grid>
               <Grid item xs={props.discountPrice ? 2 : 12}>
                 {props.discountPrice && <StyledPriceBox />}
-                <Box fontFamily="OswaldMedium" fontSize="24px" mt={5}>
+                <Box fontFamily="OswaldMedium" fontSize="24px" color="#000000" ml={1} mt={5}>
                   {formatPrice(props.price) + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
                 </Box>
               </Grid>
               {props.discountPrice && (
                 <Grid item xs={2}>
-                  <Box fontFamily="OswaldMedium" fontSize="24px" mt={5}>
+                  <Box fontFamily="OswaldMedium" fontSize="24px" color="#000000" ml={1} mt={5}>
                     {props.discountPrice + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
                   </Box>
                 </Grid>
               )}
             </Grid>
             <Grid container item xs={2}>
-              <Box>
+              <StyledLink href={props.storeLink}>
                 <StyledLogo src={props.logo} />
-              </Box>
+                <StyledStoreLink href={props.storeLink}>{translate('MegaMall_GoTo_Store', 'Види продавница')}</StyledStoreLink>
+              </StyledLink>
             </Grid>
             {/* End desktop product item */}
           </Hidden>
@@ -69,20 +71,30 @@ const ProductItem = (props: IProductItem) => {
             )}
             <Grid container item xs={props.img ? 7 : 10}>
               <Grid item xs={12}>
-                <Box fontFamily="RobotoRegular" fontSize="14px">
+                <Box fontFamily="RobotoRegular" fontSize="14px" color="#000000">
                   {props.title.length > 100 ? props.title.substring(0, 100) + '...' : props.title}
                 </Box>
               </Grid>
               <Grid container spacing={props.discountPrice ? 1 : 0}>
-                <Grid item xs={props.discountPrice ? 6 : 12}>
-                  {props.discountPrice && <MobileStyledPriceBox />}
-                  <Box fontFamily="OswaldMedium" fontSize="18px" mt={5}>
-                    {props.price + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
-                  </Box>
-                </Grid>
+                <Hidden smUp>
+                  <Grid item xs={props.discountPrice ? 6 : 12}>
+                    {props.discountPrice && <MobileStyledPriceBox />}
+                    <Box fontFamily="OswaldMedium" fontSize="18px" color="#000000" mt={5}>
+                      {props.price ? props.price + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД') : '0' + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
+                    </Box>
+                  </Grid>
+                </Hidden>
+                <Hidden only="xs">
+                  <Grid item xs={props.discountPrice && props.img ? 5 : 3}>
+                    {props.discountPrice && <MobileStyledPriceBox />}
+                    <Box fontFamily="OswaldMedium" fontSize="18px" color="#000000" mt={5}>
+                      {props.price ? props.price + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД') : '0' + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
+                    </Box>
+                  </Grid>
+                </Hidden>
                 {props.discountPrice && (
-                  <Grid item xs={6} offset-1>
-                    <Box fontFamily="OswaldMedium" fontSize="18px" mt={5}>
+                  <Grid item xs={6}>
+                    <Box fontFamily="OswaldMedium" fontSize="18px" color="#000000" mt={5}>
                       {props.discountPrice + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
                     </Box>
                   </Grid>
@@ -92,13 +104,19 @@ const ProductItem = (props: IProductItem) => {
             {props.discountPrice ? (
               <Grid container item xs={12}>
                 <Box mt={5} justifyContent="flex-end" alignContent="flex-end" alignItems="flex-end">
-                  <StyledLogo src={props.logo} />
+                  <StyledLink href={props.storeLink}>
+                    <StyledLogo src={props.logo} />
+                    <StyledStoreLink href={props.storeLink}>{translate('MegaMall_GoTo_Store', 'Види продавница')}</StyledStoreLink>
+                  </StyledLink>
                 </Box>
               </Grid>
             ) : (
               <Grid container item xs={2}>
                 <Box>
-                  <StyledLogo src={props.logo} />
+                  <StyledLink href={props.storeLink}>
+                    <StyledLogo src={props.logo} />
+                    <StyledStoreLink href={props.storeLink}>{translate('MegaMall_GoTo_Store', 'Види продавница')}</StyledStoreLink>
+                  </StyledLink>
                 </Box>
               </Grid>
             )}

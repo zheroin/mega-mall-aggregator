@@ -39,9 +39,12 @@ const StyledTypography = styled(Typography)`
   font-weight: bold;
   transform: rotate(-90deg);
   text-align: center;
+  font-family: 'Roboto-Regular', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
 
   @media (max-width: 768px) {
-    font-size: 14px;
+    font-size: 12px;
   }
 `;
 

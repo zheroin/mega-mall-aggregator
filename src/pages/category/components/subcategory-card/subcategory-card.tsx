@@ -14,7 +14,7 @@ const SubcategoryCard = (props: SubcategoryCardProps) => {
         <Box p={1}>
           <StyledCardMedia image={`/assets/images${props.path}.png`} />
           <CardContent>
-            <Box pt={3} pb={3} fontWeight="fontWeightBold" fontFamily="RobotoRegular" fontSize="16px" textAlign="center">
+            <Box fontWeight="fontWeightBold" fontFamily="RobotoRegular" fontSize="16px" textAlign="center">
               <Typography variant="h6">{props.title}</Typography>
             </Box>
           </CardContent>

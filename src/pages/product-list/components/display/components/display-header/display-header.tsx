@@ -28,7 +28,7 @@ const DisplayHeader = (props: IDisplayHeader) => {
         </Grid>
         <Grid container>
           <Grid item xs={12} md={5}>
-            <Box mt={2}>
+            <Box mt={2} mb={1}>
               <Typography color="textSecondary" variant="body2">
                 {`${from}-${to} од ${props.count} производи`}
               </Typography>
