@@ -38,13 +38,13 @@ const ProductItem = (props: IProductItem) => {
                   {props.title.length > 100 ? props.title.substring(0, 100) + '...' : props.title}
                 </Box>
               </Grid>
-              <Grid item xs={props.discountPrice ? 2 : 12}>
-                {props.discountPrice && <StyledPriceBox />}
+              <Grid item xs={!!props.discountPrice ? 2 : 12}>
+                {!!props.discountPrice && <StyledPriceBox />}
                 <Box fontFamily="OswaldMedium" fontSize="24px" color="#000000" ml={1} mt={5}>
                   {formatPrice(props.price) + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
                 </Box>
               </Grid>
-              {props.discountPrice && (
+              {!!props.discountPrice && (
                 <Grid item xs={2}>
                   <Box fontFamily="OswaldMedium" fontSize="24px" color="#000000" ml={1} mt={5}>
                     {props.discountPrice + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
@@ -75,24 +75,24 @@ const ProductItem = (props: IProductItem) => {
                   {props.title.length > 100 ? props.title.substring(0, 100) + '...' : props.title}
                 </Box>
               </Grid>
-              <Grid container spacing={props.discountPrice ? 1 : 0}>
+              <Grid container spacing={!!props.discountPrice ? 1 : 0}>
                 <Hidden smUp>
-                  <Grid item xs={props.discountPrice ? 6 : 12}>
-                    {props.discountPrice && <MobileStyledPriceBox />}
+                  <Grid item xs={!!props.discountPrice ? 6 : 12}>
+                    {!!props.discountPrice && <MobileStyledPriceBox />}
                     <Box fontFamily="OswaldMedium" fontSize="18px" color="#000000" mt={5}>
                       {props.price ? props.price + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД') : '0' + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
                     </Box>
                   </Grid>
                 </Hidden>
                 <Hidden only="xs">
-                  <Grid item xs={props.discountPrice && props.img ? 5 : 3}>
-                    {props.discountPrice && <MobileStyledPriceBox />}
+                  <Grid item xs={!!props.discountPrice && props.img ? 5 : 3}>
+                    {!!props.discountPrice && <MobileStyledPriceBox />}
                     <Box fontFamily="OswaldMedium" fontSize="18px" color="#000000" mt={5}>
                       {props.price ? props.price + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД') : '0' + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
                     </Box>
                   </Grid>
                 </Hidden>
-                {props.discountPrice && (
+                {!!props.discountPrice && (
                   <Grid item xs={6}>
                     <Box fontFamily="OswaldMedium" fontSize="18px" color="#000000" mt={5}>
                       {props.discountPrice + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
@@ -101,7 +101,7 @@ const ProductItem = (props: IProductItem) => {
                 )}
               </Grid>
             </Grid>
-            {props.discountPrice ? (
+            {!!props.discountPrice ? (
               <Grid container item xs={12}>
                 <Box mt={5} justifyContent="flex-end" alignContent="flex-end" alignItems="flex-end">
                   <StyledLink href={props.storeLink}>

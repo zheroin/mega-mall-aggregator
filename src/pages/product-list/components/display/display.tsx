@@ -88,6 +88,7 @@ const Display = (props: IProps) => {
                     return (
                       <StyledLink key={product.id} href={generatePath(ROUTES.PRODUCT, { id: product.id })}>
                         {index === 0 && <Divider />}
+                        {console.log('product', product)}
                         <ListItem button disableGutters={true} divider={true}>
                           <StyledBox mt={1} mb={1}>
                             <ProductItem
@@ -95,7 +96,7 @@ const Display = (props: IProps) => {
                               img={product.imageSource || displayData[1].imageSource}
                               title={product.name}
                               price={product.price === '' ? '0' : product.price}
-                              discountPrice={product.discountPrice}
+                              discountPrice={product.promotionPrice}
                               description={''}
                               logo={findStoreLogo(product.store)}
                               link={product.link}
@@ -135,7 +136,7 @@ const Display = (props: IProps) => {
             </LoadingScreen>
           ) : (
             //TODO: this should be discussed and probably changed...
-            <_EmptyState></_EmptyState>
+            <_EmptyState />
           )}
         </>
       )}

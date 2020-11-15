@@ -4,7 +4,7 @@ declare module Models.Product {
     link: string;
     name: string;
     price: string;
-    discountPrice?: string;
+    promotionPrice?: string;
     imageSource: string;
     store: number;
     storeLink: string;
