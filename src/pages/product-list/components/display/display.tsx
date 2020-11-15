@@ -18,12 +18,15 @@ import { ListTypes } from 'lib/enums';
 import { shopsData } from './shops-list/shops-list.data';
 import { SubcategoryCard } from 'pages/category/components/subcategory-card';
 import { MenuItem } from 'lib/data';
+import { _EmptyState } from 'components/empty-state';
+import LoadingScreen from 'react-loading-screen';
 
 interface IProps {
   data: Models.Product.Model[];
   count: number;
   options: PageOptions;
   subCategoryItem: MenuItem;
+  loadingFlag: boolean;
 
   onInit: (filter: string) => void;
   onOptionsChange: (options: PageOptions) => void;
@@ -123,7 +126,16 @@ const Display = (props: IProps) => {
           </Box>
         </Box>
       ) : (
-        <>Loading data...</>
+        <>
+          {props.loadingFlag ? (
+            <LoadingScreen loading bgColor="#193364" spinnerColor="#FDBC00">
+              <Box component="span">Default loading text to fix the children? error</Box>
+            </LoadingScreen>
+          ) : (
+            //TODO: this should be discussed and probably changed...
+            <_EmptyState></_EmptyState>
+          )}
+        </>
       )}
     </>
   );
@@ -142,7 +154,8 @@ const mapStateToProps = (state: ApplicationState) => {
   return {
     data: state.productList.data,
     count: state.productList.count,
-    options: state.productList.options
+    options: state.productList.options,
+    loadingFlag: state.productList.loadingFlag
   };
 };
 

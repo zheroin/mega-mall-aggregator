@@ -453,7 +453,8 @@
       "MegaMall_Product_Price_Currency": "МКД",
       "MegaMall_Breadcrumbs_Home": "Почетна",
       "MegaMall_SimilarProducts_Heading": "Слични производи и останати продавници",
-      "MegaMall_Financial_Button": "Финансиско друштво"
+      "MegaMall_Financial_Button": "Финансиско друштво",
+      "MegaMall_NoResults_State": "Нема податоци за избраната категорија."
     }
   },
   "en-GB": {
@@ -911,7 +912,8 @@
       "MegaMall_Product_Price_Currency": "MKD",
       "MegaMall_Breadcrumbs_Home": "Home",
       "MegaMall_SimilarProducts_Heading": "Similar products and other stores",
-      "MegaMall_Financial_Button": "Financial group"
+      "MegaMall_Financial_Button": "Financial group",
+      "MegaMall_NoResults_State": "No results for the chosen category"
     }
   }
 }
