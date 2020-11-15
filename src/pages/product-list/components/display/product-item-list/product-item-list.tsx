@@ -1,20 +1,32 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import { List, ListItem, Typography, Box, Grid, FormControl, Hidden } from '@material-ui/core';
 import { displayData } from './product-item-list.data';
 import { StyledButton as ShowMoreButton, StyledHeaderBox } from './product-item-list.styles';
 import { StyledPagination, StyledBox } from '../display.styles';
 import { ProductItem } from './../product-item';
-import { generatePath } from 'react-router';
+import { generatePath, withRouter } from 'react-router';
 import { ROUTES } from '../../../../../consts';
 
 import { StyledSelect } from './../components/display-header/components/desktop-filter/desktop-filter.styles';
-import { OrderTypes } from 'lib/enums';
+import { ListTypes, OrderTypes } from 'lib/enums';
 import { getTextForOrderType } from './../components/display-header/components/desktop-filter/desktop-filter.utils';
 import { translate } from 'lib/translate';
+import { AppDispatch } from 'index';
+import ApplicationState from 'store/application-state';
+import { connect } from 'react-redux';
+import { getLatestProducts } from 'store/main-store';
+import { PageOptions } from 'lib/models';
+import { changePageOptions } from 'store/product-list-store';
+import { findStoreLogo } from 'utils/helpers/find-store-logo';
 
 interface ShopsListProps {
   isPaging: 'prodList' | 'detailList';
+  data: Models.Product.Model[];
+  onInit: () => void;
+
+  options: PageOptions;
+  onOptionsChange: (options: PageOptions) => void;
 }
 
 const ProductItemList = (props: ShopsListProps) => {
@@ -28,6 +40,10 @@ const ProductItemList = (props: ShopsListProps) => {
   const indexOfLastPost = currentPage * postPerPage;
   const indexOfFirstPost = indexOfLastPost - postPerPage;
   const currentPost = posts.slice(indexOfFirstPost, indexOfLastPost);
+
+  useEffect(() => {
+    props.onInit();
+  }, []);
 
   var pages = 0;
   if (posts.length % postPerPage == 0) {
@@ -49,7 +65,6 @@ const ProductItemList = (props: ShopsListProps) => {
     const indexOfLastPost = currentPage * (postPerPage + 10);
     const indexOfFirstPost = indexOfLastPost - postPerPage;
     const currentPost = posts.slice(indexOfFirstPost, indexOfLastPost);
-
     return (
       <>
         <StyledPagination count={pages} page={currentPage} onChange={paginate} />
@@ -64,6 +79,10 @@ const ProductItemList = (props: ShopsListProps) => {
         </ShowMoreButton>
       </>
     );
+  };
+  const changeOrderType = (event: React.ChangeEvent<{ value: string }>) => {
+    setOrderType(+event.target.value);
+    props.onOptionsChange({ ...props.options, order: +event.target.value });
   };
 
   return (
@@ -80,7 +99,7 @@ const ProductItemList = (props: ShopsListProps) => {
                   disableUnderline
                   value={orderType}
                   onChange={(event: React.ChangeEvent<{ value: string }>) => {
-                    setOrderType(+event.target.value);
+                    changeOrderType(event);
                   }}
                 >
                   {Object.keys(OrderTypes)
@@ -103,10 +122,10 @@ const ProductItemList = (props: ShopsListProps) => {
       </StyledHeaderBox>
       <Box>
         <List component={'ul'}>
-          {currentPost.map(val => (
+          {props.data.map(val => (
             <ListItem key={val.id} button component={RouterLink} to={generatePath(ROUTES.PRODUCT, { id: val.id })} disableGutters={true} divider={true}>
               <StyledBox mt={1} mb={1}>
-                <ProductItem key={val.id} title={val.title} price={val.price} discountPrice={val.discountPrice} description={val.description} logo={val.logo} link={val.link} />
+                <ProductItem key={val.id} title={val.name} price={val.price} discountPrice={val.discountPrice} logo={findStoreLogo(val.store)} link={val.link} storeLink={val.storeLink} />
               </StyledBox>
             </ListItem>
           ))}
@@ -120,4 +139,21 @@ const ProductItemList = (props: ShopsListProps) => {
   );
 };
 
-export default ProductItemList;
+const mapDispatchToProps = (dispatch: AppDispatch) => ({
+  onInit: () => {
+    dispatch(getLatestProducts());
+  },
+  onOptionsChange: (options: PageOptions) => {
+    dispatch(changePageOptions(options));
+  }
+});
+
+const mapStateToProps = (state: ApplicationState) => {
+  return {
+    data: state.main.latestData,
+    options: state.productList.options
+  };
+};
+const ProductItemListContainer = connect(mapStateToProps, mapDispatchToProps)(ProductItemList);
+
+export default ProductItemListContainer;

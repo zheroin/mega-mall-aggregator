@@ -31,7 +31,7 @@
       "MegaMall_CategotyGrid_Food": "ХРАНА И ПИЈАЛОЦИ",
       "MegaMall_CategotyGrid_Education": "ЕДУКАЦИЈА",
       "MegaMall_CategotyGrid_Events": "КУЛТУРА И НАСТАНИ",
-      "MegaMall_Footer_WebSpot": "ВЕБСПОТ | ТА ВЕБСПОТ ДОО",
+      "MegaMall_Footer_WebSpot": "MegaMall DOO",
       "MegaMall_Footer_Header": "Следете не",
       "MegaMall_Footer_Facebook": "Facebook",
       "MegaMall_Footer_Instagram": "Instagram",
@@ -58,7 +58,7 @@
       "MegaMall_Footer_Services": "Услуги",
       "MegaMall_Footer_Food_Drinks": "Храна и пијалоци",
       "MegaMall_Footer_Education": "Едукација",
-      "MegaMall_Footer_Copyright": "E-commerce Сите права задржани.",
+      "MegaMall_Footer_Copyright": "MegaMall | Сите права се задржани.",
       "MegaMall_Footer_Culture_Events": "Култура и настани",
       "MegaMall_FilterBar_PriceAscending": "Цена ниска > висока",
       "MegaMall_FilterBar_PriceDescending": "Цена висока > ниска",
@@ -454,7 +454,9 @@
       "MegaMall_Breadcrumbs_Home": "Почетна",
       "MegaMall_SimilarProducts_Heading": "Слични производи и останати продавници",
       "MegaMall_Financial_Button": "Финансиско друштво",
-      "MegaMall_NoResults_State": "Нема податоци за избраната категорија."
+      "MegaMall_NoResults_State": "Нема податоци за избраната категорија.",
+      "MegaMall_GoTo_Store": "Види продавница",
+      "MegaMall_GoTo_Product": "Види во продавница"
     }
   },
   "en-GB": {
@@ -913,7 +915,9 @@
       "MegaMall_Breadcrumbs_Home": "Home",
       "MegaMall_SimilarProducts_Heading": "Similar products and other stores",
       "MegaMall_Financial_Button": "Financial group",
-      "MegaMall_NoResults_State": "No results for the chosen category"
+      "MegaMall_NoResults_State": "No results for the chosen category",
+      "MegaMall_GoTo_Store": "Visit store",
+      "MegaMall_GoTo_Product": "See this product in the store"
     }
   }
 }

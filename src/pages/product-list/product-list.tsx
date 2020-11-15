@@ -73,9 +73,16 @@ const ProductList = (props: IProps) => {
                   <Navigation categoryItem={categoryItem} subCategoryItem={subCategoryItem} />
                 </Grid>
               </Hidden>
-              <Grid item xs={12} md={8} lg={9} xl={10}>
-                <DisplayContainer subCategoryItem={subCategoryItem ? subCategoryItem : categoryItem} />
-              </Grid>
+              <Hidden xsDown>
+                <Grid item xs={8} lg={9} xl={10}>
+                  <DisplayContainer subCategoryItem={subCategoryItem ? subCategoryItem : categoryItem} />
+                </Grid>
+              </Hidden>
+              <Hidden smUp>
+                <Grid item xs={12} md={8} lg={9} xl={10}>
+                  <DisplayContainer subCategoryItem={subCategoryItem ? subCategoryItem : categoryItem} />
+                </Grid>
+              </Hidden>
             </Grid>
           </Box>
         </>
