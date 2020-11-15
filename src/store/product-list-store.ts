@@ -9,6 +9,7 @@ export interface ProductListStore {
   data: Models.Product.Model[];
   count: number;
   options: PageOptions;
+  loadingFlag: boolean;
 }
 
 export const initialState: ProductListStore = {
@@ -19,7 +20,8 @@ export const initialState: ProductListStore = {
     size: 10,
     order: OrderTypes.Latest,
     filter: ''
-  }
+  },
+  loadingFlag: true
 };
 
 const slice = createSlice({
@@ -28,6 +30,7 @@ const slice = createSlice({
   reducers: {
     setData: (state: ProductListStore, action: PayloadAction<Models.Product.Model[]>) => {
       state.data = action.payload;
+      state.loadingFlag = false;
     },
     setCount: (state: ProductListStore, action: PayloadAction<number>) => {
       state.count = action.payload;

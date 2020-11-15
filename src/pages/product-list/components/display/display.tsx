@@ -18,6 +18,8 @@ import { ListTypes, Stores } from 'lib/enums';
 import { shopsData } from './shops-list/shops-list.data';
 import { SubcategoryCard } from 'pages/category/components/subcategory-card';
 import { MenuItem } from 'lib/data';
+import { _EmptyState } from 'components/empty-state';
+import LoadingScreen from 'react-loading-screen';
 import { findStoreLogo } from 'utils/helpers/find-store-logo';
 
 interface IProps {
@@ -25,6 +27,7 @@ interface IProps {
   count: number;
   options: PageOptions;
   subCategoryItem: MenuItem;
+  loadingFlag: boolean;
 
   onInit: (filter: string) => void;
   onOptionsChange: (options: PageOptions) => void;
@@ -92,7 +95,7 @@ const Display = (props: IProps) => {
                               img={product.imageSource || displayData[1].imageSource}
                               title={product.name}
                               price={product.price === '' ? '0' : product.price}
-                              discountPrice={product.discountPrice}
+                              discountPrice={product.promotionPrice}
                               description={''}
                               logo={findStoreLogo(product.store)}
                               link={product.link}
@@ -125,7 +128,16 @@ const Display = (props: IProps) => {
           </Box>
         </Box>
       ) : (
-        <>Loading data...</>
+        <>
+          {props.loadingFlag ? (
+            <LoadingScreen loading bgColor="#193364" spinnerColor="#FDBC00">
+              <Box component="span">Default loading text to fix the children? error</Box>
+            </LoadingScreen>
+          ) : (
+            //TODO: this should be discussed and probably changed...
+            <_EmptyState />
+          )}
+        </>
       )}
     </>
   );
@@ -144,7 +156,8 @@ const mapStateToProps = (state: ApplicationState) => {
   return {
     data: state.productList.data,
     count: state.productList.count,
-    options: state.productList.options
+    options: state.productList.options,
+    loadingFlag: state.productList.loadingFlag
   };
 };
 
