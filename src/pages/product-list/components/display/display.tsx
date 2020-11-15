@@ -88,7 +88,6 @@ const Display = (props: IProps) => {
                     return (
                       <StyledLink key={product.id} href={generatePath(ROUTES.PRODUCT, { id: product.id })}>
                         {index === 0 && <Divider />}
-                        {console.log('product', product)}
                         <ListItem button disableGutters={true} divider={true}>
                           <StyledBox mt={1} mb={1}>
                             <ProductItem
