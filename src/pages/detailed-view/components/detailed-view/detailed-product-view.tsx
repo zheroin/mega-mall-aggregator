@@ -48,9 +48,9 @@ const DetailedProductView = (props: IProps) => {
                     <Typography variant="h4" gutterBottom color="textPrimary">
                       {props.data.name}
                     </Typography>
-                    <StyledStoreLink href={props.data.link}>
-                      <Box textAlign="left">{translate('MegaMall_GoTo_Product', 'Види во продавница')}</Box>
-                    </StyledStoreLink>
+                    <Box textAlign="left">
+                      <Typography variant="body2">{translate('MegaMall_GoTo_Product', 'Види во продавница')}</Typography>
+                    </Box>
                   </Link>
                 </Box>
                 <Box pb={2}>
@@ -66,7 +66,9 @@ const DetailedProductView = (props: IProps) => {
 
                   <StyledLink href={props.data.storeLink}>
                     <StyledLogo src={props.data.store ? findStoreLogo(props.data.store) : '/src/assets/images/main/Mega-m-original.svg'} />
-                    <StyledStoreLink href={props.data.storeLink}>{translate('MegaMall_GoTo_Store', 'Види продавница')}</StyledStoreLink>
+                    <Box textAlign="right" mr={2} mt={1}>
+                      <Typography variant="body2">{translate('MegaMall_GoTo_Store', 'Види продавница')}</Typography>
+                    </Box>
                   </StyledLink>
                   {/* TODO: add logo of company here as btn */}
                 </StyledBox>

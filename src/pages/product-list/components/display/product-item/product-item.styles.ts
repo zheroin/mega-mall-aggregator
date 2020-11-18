@@ -74,7 +74,7 @@ const StyledLink = styled(Link)`
   width: 100%;
 `;
 
-const StyledStoreLink = styled(Link)`
+const StyledStoreLink = styled(Box)`
   position: absolute;
   bottom: 5px;
   right: 7px;

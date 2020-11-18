@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { ExpansionPanelDetails, Button, Box, ExpansionPanel } from '@material-ui/core';
+import { ExpansionPanelDetails, Button, Box, ExpansionPanel, Accordion, AccordionDetails } from '@material-ui/core';
 
 const StyledBox = styled(Box)`
   margin: 0 auto;
@@ -24,7 +24,7 @@ const StyledItemButton = styled(Button)`
   }
 `;
 
-const StyledExpansionPanel = styled(ExpansionPanel)`
+const StyledExpansionPanel = styled(Accordion)`
   box-shadow: none;
   border: 1px solid #0d1440;
 
@@ -33,7 +33,7 @@ const StyledExpansionPanel = styled(ExpansionPanel)`
   }
 `;
 
-const StyledDetails = styled(ExpansionPanelDetails)`
+const StyledDetails = styled(AccordionDetails)`
   background-color: #ecedf0;
 `;
 

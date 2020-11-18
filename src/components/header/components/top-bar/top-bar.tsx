@@ -14,7 +14,9 @@ const TopBar = () => {
       <Box>
         <Grid container justify="flex-end" alignItems="flex-end" spacing={2}>
           <Grid item>
-            <StyledTypography variant="subtitle2">{translate('MegaMall_Topbar_Shops', 'Продавници')}</StyledTypography>
+            <Link href="/stores">
+              <StyledTypography variant="subtitle2">{translate('MegaMall_Topbar_Shops', 'Продавници')}</StyledTypography>
+            </Link>
           </Grid>
           <Grid item style={{ padding: 0 }}>
             <Link href="https://www.facebook.com">

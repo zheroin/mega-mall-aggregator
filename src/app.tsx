@@ -11,6 +11,8 @@ import LoadingScreen from 'react-loading-screen';
 import DetailedProductView from 'pages/detailed-view/components/detailed-view/detailed-product-view';
 import _DetailedProductPage from 'pages/detailed-view/detailed-product';
 import FinancialButton from 'pages/main/components/financial-button/financial-button';
+import { Stores } from 'lib/enums';
+import StoresBook from 'pages/stores/stores-book';
 
 interface IApp {
   applicationBootstraped: boolean;
@@ -50,6 +52,7 @@ const _App: React.FC<IApp> = (props: IApp) => {
                 <Route exact path={ROUTES.CATEGORY} component={CategoryPage} />
                 <Route path={ROUTES.LIST} component={ProductListPage} />
                 <Route path={ROUTES.PRODUCT} component={_DetailedProductPage} />
+                <Route path={ROUTES.STORES} component={StoresBook} />
               </Switch>
             </Box>
             <Footer />

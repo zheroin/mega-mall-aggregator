@@ -55,7 +55,7 @@ const ProductItem = (props: IProductItem) => {
             <Grid container item xs={2}>
               <StyledLink href={props.storeLink}>
                 <StyledLogo src={props.logo} />
-                <StyledStoreLink href={props.storeLink}>{translate('MegaMall_GoTo_Store', 'Види продавница')}</StyledStoreLink>
+                <StyledStoreLink>{translate('MegaMall_GoTo_Store', 'Види продавница')}</StyledStoreLink>
               </StyledLink>
             </Grid>
             {/* End desktop product item */}
@@ -106,7 +106,7 @@ const ProductItem = (props: IProductItem) => {
                 <Box mt={5} justifyContent="flex-end" alignContent="flex-end" alignItems="flex-end">
                   <StyledLink href={props.storeLink}>
                     <StyledLogo src={props.logo} />
-                    <StyledStoreLink href={props.storeLink}>{translate('MegaMall_GoTo_Store', 'Види продавница')}</StyledStoreLink>
+                    <StyledStoreLink>{translate('MegaMall_GoTo_Store', 'Види продавница')}</StyledStoreLink>
                   </StyledLink>
                 </Box>
               </Grid>
@@ -115,7 +115,7 @@ const ProductItem = (props: IProductItem) => {
                 <Box>
                   <StyledLink href={props.storeLink}>
                     <StyledLogo src={props.logo} />
-                    <StyledStoreLink href={props.storeLink}>{translate('MegaMall_GoTo_Store', 'Види продавница')}</StyledStoreLink>
+                    <StyledStoreLink>{translate('MegaMall_GoTo_Store', 'Види продавница')}</StyledStoreLink>
                   </StyledLink>
                 </Box>
               </Grid>

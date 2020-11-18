@@ -4,25 +4,26 @@ import { connect } from 'react-redux';
 import { AppDispatch } from 'index';
 import ApplicationState from 'store/application-state';
 
-import { Box, ListItem, List, Link, Grid, createStyles, makeStyles, Theme, Divider } from '@material-ui/core';
+import { Box, ListItem, List, Grid, Divider } from '@material-ui/core';
 import DisplayHeader from './components/display-header/display-header';
 
 import { ProductItem } from './product-item';
-import { generatePath } from 'react-router';
+import { generatePath, RouteComponentProps, withRouter } from 'react-router';
 import { ROUTES } from 'consts';
 import { StyledBox, StyledLink, StyledPagination } from './display.styles';
 import { getProducts, changePageOptions } from 'store/product-list-store';
 import { PageOptions } from 'lib/models';
 import { displayData } from './product-item-list/product-item-list.data';
-import { ListTypes, Stores } from 'lib/enums';
-import { shopsData } from './shops-list/shops-list.data';
-import { SubcategoryCard } from 'pages/category/components/subcategory-card';
+import { ListTypes } from 'lib/enums';
 import { MenuItem } from 'lib/data';
 import { _EmptyState } from 'components/empty-state';
 import LoadingScreen from 'react-loading-screen';
 import { findStoreLogo } from 'utils/helpers/find-store-logo';
+import { shopsData } from './shops-list/shops-list.data';
+import ECommerceCard from 'pages/stores/components/ecommerce-card/ecommerce-card';
+import { allEcommerces } from 'pages/stores/registered-ecommerces';
 
-interface IProps {
+interface IProps extends RouteComponentProps<{ type: string }> {
   data: Models.Product.Model[];
   count: number;
   options: PageOptions;
@@ -41,6 +42,8 @@ const Display = (props: IProps) => {
   const indexOfLastPost = currentPage * postPerPage;
   const indexOfFirstPost = indexOfLastPost - postPerPage;
   const currentPost = shopsData.slice(indexOfFirstPost, indexOfLastPost);
+
+  const [currentCategory, setCurrentCategory] = useState('');
 
   useEffect(() => {
     props.onInit(props.subCategoryItem.title);
@@ -72,6 +75,10 @@ const Display = (props: IProps) => {
   useEffect(() => {
     calculatePages();
   }, []);
+
+  useEffect(() => {
+    setCurrentCategory(props.match.params.type);
+  }, [props.match.params.type]);
 
   return (
     <>
@@ -113,16 +120,18 @@ const Display = (props: IProps) => {
               </>
             ) : (
               <>
-                <Grid container spacing={3}>
-                  {currentPost.map(val => (
-                    <Grid item key={val.id} xs={12} sm={6} md={6} lg={2} xl={2}>
-                      {/* <SubcategoryCard imageSrc={val.url} title={val.title} link={val.link}></SubcategoryCard> */}
-                    </Grid>
-                  ))}
+                <Grid container spacing={1}>
+                  {allEcommerces.map(store => {
+                    if (store.ecommerceCategory.includes(currentCategory)) {
+                      return (
+                        <Grid item key={store.id} xs={12} sm={6} md={6} lg={2} xl={2}>
+                          <ECommerceCard storeTitle={store.ecommerceName} storeLogoPath={store.ecommerceLogo} storeLink={store.ecommerceLink} />
+                        </Grid>
+                      );
+                    }
+                  })}
                 </Grid>
-                <Box mt={2}>
-                  <StyledPagination count={pages} page={currentPage} onChange={paginate} />
-                </Box>
+                {/* Due to small number of stores, the pagination is not needed at this point */}
               </>
             )}
           </Box>
@@ -161,6 +170,6 @@ const mapStateToProps = (state: ApplicationState) => {
   };
 };
 
-const DisplayContainer = connect(mapStateToProps, mapDispatchToProps)(Display);
+const DisplayContainer = connect(mapStateToProps, mapDispatchToProps)(withRouter(Display));
 
 export default DisplayContainer;

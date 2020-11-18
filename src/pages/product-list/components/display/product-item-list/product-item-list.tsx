@@ -93,7 +93,7 @@ const ProductItemList = (props: ShopsListProps) => {
             <Typography variant="h4">{translate('MegaMall_SimilarProducts_Heading', 'Слични производи и останати продавници')}</Typography>
           </Grid>
           <Grid item>
-            <Hidden mdDown>
+            {/* <Hidden mdDown>
               <FormControl>
                 <StyledSelect
                   disableUnderline
@@ -113,7 +113,7 @@ const ProductItemList = (props: ShopsListProps) => {
                     })}
                 </StyledSelect>
               </FormControl>
-            </Hidden>
+            </Hidden> */}
           </Grid>
         </Grid>
         {/* I suggest this to be created as a separate component because we are using it in 2 different components and the code is the same and everything and even the functionality
