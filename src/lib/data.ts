@@ -961,355 +961,355 @@ const menuItems = (): MenuItem[] => [
     id: 157,
     title: translate('MegaMall_Header_Men_Shoes', 'Кондури'),
     link: `/categories/fashion/male-shoes/shoes`,
-    parentId: 29
+    parentId: 31
   },
   {
     id: 158,
     title: translate('MegaMall_Header_Men_Sneakers', 'Патики'),
     link: `/categories/fashion/male-shoes/sneakers`,
-    parentId: 29
+    parentId: 31
   },
   {
     id: 159,
     title: translate('MegaMall_Header_Sandals', 'Сандали'),
     link: `/categories/fashion/male-shoes/sandals`,
-    parentId: 29
+    parentId: 31
   },
   {
     id: 160,
     title: translate('MegaMall_Header_Boots', 'Чизми'),
     link: `/categories/fashion/male-shoes/boots`,
-    parentId: 29
+    parentId: 31
   },
   {
     id: 161,
     title: translate('MegaMall_Header_Slippers', 'Папучи и апостолки'),
     link: `/categories/fashion/male-shoes/slippers`,
-    parentId: 29
+    parentId: 31
   },
   {
     id: 162,
     title: translate('MegaMall_Header_Men_Other', 'Останато'),
     link: `/categories/fashion/male-shoes/other`,
-    parentId: 29
+    parentId: 31
   },
   {
     id: 163,
     title: translate('MegaMall_Header_Men_Belts', 'Ремени'),
     link: `/categories/fashion/male-accessories/belts`,
-    parentId: 30
+    parentId: 32
   },
   {
     id: 164,
     title: translate('MegaMall_Header_Men_Bags', 'Торби'),
     link: `/categories/fashion/male-accessories/bags`,
-    parentId: 30
+    parentId: 32
   },
   {
     id: 165,
     title: translate('MegaMall_Header_Men_Backpacks', 'Ранци'),
     link: `/categories/fashion/male-accessories/backpack`,
-    parentId: 30
+    parentId: 32
   },
   {
     id: 166,
     title: translate('MegaMall_Header_Men_Wallets', 'Паричници'),
     link: `/categories/fashion/male-accessories/wallets`,
-    parentId: 30
+    parentId: 32
   },
   {
     id: 167,
     title: translate('MegaMall_Header_Men_Ties', 'Вратоврски'),
     link: `/categories/fashion/male-accessories/ties`,
-    parentId: 30
+    parentId: 32
   },
   {
     id: 168,
     title: translate('MegaMall_Header_Men_Bows', 'Лептир машни'),
     link: `/categories/fashion/male-accessories/bows`,
-    parentId: 30
+    parentId: 32
   },
   {
     id: 169,
     title: translate('MegaMall_Header_Men_Scarves', 'Марами'),
     link: `/categories/fashion/male-accessories/scarfs`,
-    parentId: 30
+    parentId: 32
   },
   {
     id: 170,
     title: translate('MegaMall_Header_Men_Scarve', 'Шалови'),
     link: `/categories/fashion/male-accessories/scarves`,
-    parentId: 30
+    parentId: 32
   },
   {
     id: 171,
     title: translate('MegaMall_Header_Men_Braclets', 'Нараквици'),
     link: `/categories/fashion/male-accessories/gloves`,
-    parentId: 30
+    parentId: 32
   },
   {
     id: 172,
     title: translate('MegaMall_Header_Men_Socks', 'Чорапи'),
     link: `/categories/fashion/male-accessories/socks`,
-    parentId: 30
+    parentId: 32
   },
   {
     id: 173,
     title: translate('MegaMall_Header_Men_Glasses', 'Очила'),
     link: `/categories/fashion/male-accessories/glasses`,
-    parentId: 30
+    parentId: 32
   },
   {
     id: 174,
     title: translate('MegaMall_Header_Men_Other_Stuff', 'Останато'),
     link: `/categories/fashion/male-accessories/other`,
-    parentId: 30
+    parentId: 32
   },
   {
     id: 175,
     title: translate('MegaMall_Header_Women_Tshirt', 'Маици'),
     link: `/categories/fashion/female-clothes/tshirts`,
-    parentId: 31
+    parentId: 29
   },
   {
     id: 176,
     title: translate('MegaMall_Header_Women_Tops', 'Топчиња'),
     link: `/categories/fashion/female-clothes/tops`,
-    parentId: 31
+    parentId: 29
   },
   {
     id: 177,
     title: translate('MegaMall_Header_Women_Shirts', 'Кошули'),
     link: `/categories/fashion/female-clothes/shirts`,
-    parentId: 31
+    parentId: 29
   },
   {
     id: 178,
     title: translate('MegaMall_Header_Women_Blouse', 'Блузи'),
     link: `/categories/fashion/female-clothes/blouses`,
-    parentId: 31
+    parentId: 29
   },
   {
     id: 179,
     title: translate('MegaMall_Header_Women_Coats', 'Палта'),
     link: `/categories/fashion/female-clothes/coats`,
-    parentId: 31
+    parentId: 29
   },
   {
     id: 180,
     title: translate('MegaMall_Header_Women_Jacket', 'Јакни'),
     link: `/categories/fashion/female-clothes/jackets`,
-    parentId: 31
+    parentId: 29
   },
   {
     id: 181,
     title: translate('MegaMall_Header_Women_Vests', 'Елеци'),
     link: `/categories/fashion/female-clothes/vests`,
-    parentId: 31
+    parentId: 29
   },
   {
     id: 182,
     title: translate('MegaMall_Header_Women_Sweaters', 'Џемпери'),
     link: `/categories/fashion/female-clothes/sweaters`,
-    parentId: 31
+    parentId: 29
   },
   {
     id: 183,
     title: translate('MegaMall_Header_Women_Sweatshirts', 'Дуксери'),
     link: `/categories/fashion/female-clothes/sweatshirts`,
-    parentId: 31
+    parentId: 29
   },
   {
     id: 184,
     title: translate('MegaMall_Header_Women_Coat', 'Мантили'),
     link: `/categories/fashion/female-clothes/autumn-coats`,
-    parentId: 31
+    parentId: 29
   },
   {
     id: 185,
     title: translate('MegaMall_Header_Women_Overcoat', 'Капути'),
     link: `/categories/fashion/female-clothes/overcoat`,
-    parentId: 31
+    parentId: 29
   },
   {
     id: 186,
     title: translate('MegaMall_Header_Women_Dresses', 'Фустани'),
     link: `/categories/fashion/female-clothes/dress`,
-    parentId: 31
+    parentId: 29
   },
   {
     id: 187,
     title: translate('MegaMall_Header_Women_Skirts', 'Здолништа'),
     link: `/categories/fashion/female-clothes/skirt`,
-    parentId: 31
+    parentId: 29
   },
   {
     id: 188,
     title: translate('MegaMall_Header_Women_Overalls', 'Комбинезони'),
     link: `/categories/fashion/female-clothes/overalls`,
-    parentId: 31
+    parentId: 29
   },
   {
     id: 189,
     title: translate('MegaMall_Header_Women_Bermudes', 'Бермуди'),
     link: `/categories/fashion/female-clothes/bermudes`,
-    parentId: 31
+    parentId: 29
   },
   {
     id: 190,
     title: translate('MegaMall_Header_Women_Swimwear', 'Костими за капење'),
     link: `/categories/fashion/female-clothes/swimwear`,
-    parentId: 31
+    parentId: 29
   },
   {
     id: 191,
     title: translate('MegaMall_Header_Women_Jeans', 'Фармерки'),
     link: `/categories/fashion/female-clothes/jeans`,
-    parentId: 31
+    parentId: 29
   },
   {
     id: 192,
     title: translate('MegaMall_Header_Women_Pants', 'Панталони'),
     link: `/categories/fashion/female-clothes/pants`,
-    parentId: 31
+    parentId: 29
   },
   {
     id: 193,
     title: translate('MegaMall_Header_Women_Sweats', 'Тренерки'),
     link: `/categories/fashion/female-clothes/sweats`,
-    parentId: 31
+    parentId: 29
   },
   {
     id: 194,
     title: translate('MegaMall_Header_Women_Leggings', 'Хеланки'),
     link: `/categories/fashion/female-clothes/legging`,
-    parentId: 31
+    parentId: 29
   },
   {
     id: 195,
     title: translate('MegaMall_Header_Women_Other', 'Останато'),
     link: `/categories/fashion/female-clothes/other`,
-    parentId: 31
+    parentId: 29
   },
   {
     id: 196,
     title: translate('MegaMall_Header_Women_Sneakers', 'Патики'),
     link: `/categories/fashion/female-shoes/sneakers`,
-    parentId: 32
+    parentId: 33
   },
   {
     id: 197,
     title: translate('MegaMall_Header_Women_Shoes', 'Чевли'),
     link: `/categories/fashion/female-shoes/shoes`,
-    parentId: 32
+    parentId: 33
   },
   {
     id: 198,
     title: translate('MegaMall_Header_Women_Heels', 'Високи потпетици'),
     link: `/categories/fashion/female-shoes/heels`,
-    parentId: 32
+    parentId: 33
   },
   {
     id: 199,
     title: translate('MegaMall_Header_Women_Flats', 'Балетанки'),
     link: `/categories/fashion/female-shoes/flats`,
-    parentId: 32
+    parentId: 33
   },
   {
     id: 200,
     title: translate('MegaMall_Header_Women_Sandals', 'Сандали'),
     link: `/categories/fashion/female-shoes/sandals`,
-    parentId: 32
+    parentId: 33
   },
   {
     id: 201,
     title: translate('MegaMall_Header_Women_Slippers', 'Папучи и апостолки'),
     link: `/categories/fashion/female-shoes/slippers`,
-    parentId: 32
+    parentId: 33
   },
   {
     id: 202,
     title: translate('MegaMall_Header_Women_Boots', 'Чизми'),
     link: `/categories/fashion/female-shoes/boots`,
-    parentId: 32
+    parentId: 33
   },
   {
     id: 203,
     title: translate('MegaMall_Header_Women_Other_Stuff', 'Останато'),
     link: `/categories/fashion/female-shoes/other`,
-    parentId: 32
+    parentId: 33
   },
   {
     id: 204,
     title: translate('MegaMall_Header_Women_Purses', 'Чанти'),
     link: `/categories/fashion/female-accessories/purses`,
-    parentId: 33
+    parentId: 34
   },
   {
     id: 205,
     title: translate('MegaMall_Header_Women_Wallets', 'Паричници'),
     link: `/categories/fashion/female-accessories/wallets`,
-    parentId: 33
+    parentId: 34
   },
   {
     id: 206,
     title: translate('MegaMall_Header_Women_Belts', 'Ремени'),
     link: `/categories/fashion/female-accessories/belts`,
-    parentId: 33
+    parentId: 34
   },
   {
     id: 207,
     title: translate('MegaMall_Header_Women_Sunnies', 'Очила за сонце'),
     link: `/categories/fashion/female-accessories/sunnies`,
-    parentId: 33
+    parentId: 34
   },
   {
     id: 208,
     title: translate('MegaMall_Header_Women_Jewelry', 'Накит и додатоци'),
     link: `/categories/fashion/female-accessories/jewelry`,
-    parentId: 33
+    parentId: 34
   },
   {
     id: 209,
     title: translate('MegaMall_Header_Women_Hats', 'Шешири и капи'),
     link: `/categories/fashion/female-accessories/hats`,
-    parentId: 33
+    parentId: 34
   },
   {
     id: 210,
     title: translate('MegaMall_Header_Women_Bags', 'Торби'),
     link: `/categories/fashion/female-accessories/bags`,
-    parentId: 33
+    parentId: 34
   },
   {
     id: 211,
     title: translate('MegaMall_Header_Women_Backpacks', 'Ранци'),
     link: `/categories/fashion/female-accessories/backpacks`,
-    parentId: 33
+    parentId: 34
   },
   {
     id: 212,
     title: translate('MegaMall_Header_Women_Socks', 'Чорапи'),
     link: `/categories/fashion/female-accessories/socks`,
-    parentId: 33
+    parentId: 34
   },
   {
     id: 213,
     title: translate('MegaMall_Header_Women_Scarves', 'Шалови'),
     link: `/categories/fashion/female-accessories/scarfs`,
-    parentId: 33
+    parentId: 34
   },
   {
     id: 214,
     title: translate('MegaMall_Header_Women_Scarf', 'Марами'),
     link: `/categories/fashion/female-accessories/scarves`,
-    parentId: 33
+    parentId: 34
   },
   {
     id: 215,
     title: translate('MegaMall_Header_Women_Gloves', 'Ракавици'),
     link: `/categories/fashion/female-accessories/gloves`,
-    parentId: 33
+    parentId: 34
   },
   {
     id: 216,
