@@ -1,3 +1,4 @@
+import { push } from 'connected-react-router';
 import { AppThunk } from './app-thunk';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import * as ProductService from 'services/product-service';
