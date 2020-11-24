@@ -1386,49 +1386,49 @@ const menuItems = (): MenuItem[] => [
   {
     id: 224,
     title: translate('MegaMall_Header_Sheets_Cotton', 'Памучни'),
-    link: ` /categories/home/sheeets/cotton`,
+    link: `/categories/home/sheeets/cotton`,
     parentId: 42
   },
   {
     id: 224,
     title: translate('MegaMall_Header_Sheets_Season', 'Сезонски'),
-    link: ` /categories/home/sheeets/season`,
+    link: `/categories/home/sheeets/season`,
     parentId: 42
   },
   {
     id: 224,
     title: translate('MegaMall_Header_Sheets_Printed', 'Печатени'),
-    link: ` /categories/home/sheeets/printed`,
+    link: `/categories/home/sheeets/printed`,
     parentId: 42
   },
   {
     id: 224,
     title: translate('MegaMall_Header_Sheets_White', 'Бели'),
-    link: ` /categories/home/sheeets/white`,
+    link: `/categories/home/sheeets/white`,
     parentId: 42
   },
   {
     id: 224,
     title: translate('MegaMall_Header_Sheets_Color', 'Во боја'),
-    link: ` /categories/home/sheeets/colored`,
+    link: `/categories/home/sheeets/colored`,
     parentId: 42
   },
   {
     id: 225,
     title: translate('MegaMall_Header_Quilt_Covers', 'Навлаки за јорган'),
-    link: ` /categories/home/bedding/covers`,
+    link: `/categories/home/beddings/covers`,
     parentId: 43
   },
   {
     id: 226,
     title: translate('MegaMall_Header_Pillow_Covers', 'Навлаки за перници'),
-    link: ` /categories/home/bedding/pillow-cases`,
+    link: `/categories/home/beddings/pillow-cases`,
     parentId: 43
   },
   {
     id: 227,
     title: translate('MegaMall_Header_Sheet', 'Чаршафи'),
-    link: ` /categories/home/bedding/sheets`,
+    link: `/categories/home/beddings/sheets`,
     parentId: 43
   },
   {
