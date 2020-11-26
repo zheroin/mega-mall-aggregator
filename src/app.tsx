@@ -13,6 +13,7 @@ import _DetailedProductPage from 'pages/detailed-view/detailed-product';
 import FinancialButton from 'pages/main/components/financial-button/financial-button';
 import { Stores } from 'lib/enums';
 import StoresBook from 'pages/stores/stores-book';
+import ReactGA from 'react-ga';
 
 interface IApp {
   applicationBootstraped: boolean;
@@ -23,6 +24,7 @@ interface IApp {
 const _App: React.FC<IApp> = (props: IApp) => {
   useEffect(() => {
     props.bootstrapApp();
+    ReactGA.initialize('G-5YXWJKTC0K');
   }, []);
 
   const Header = lazy(() => import('components/header'));
