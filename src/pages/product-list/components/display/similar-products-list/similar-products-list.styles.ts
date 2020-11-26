@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { Button, Box } from '@material-ui/core';
+import { Button, Box, Link } from '@material-ui/core';
 
 const StyledButton = styled(Button)`
   display: block;
@@ -14,4 +14,10 @@ const StyledHeaderBox = styled(Box)`
   font-weight: bold;
 `;
 
-export { StyledButton, StyledHeaderBox };
+const StyledLink = styled(Link)`
+  &:hover {
+    text-decoration: none;
+  }
+`;
+
+export { StyledButton, StyledHeaderBox, StyledLink };

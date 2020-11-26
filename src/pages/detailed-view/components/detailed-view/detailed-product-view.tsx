@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Grid, Typography, Card, Box, Hidden, Link } from '@material-ui/core';
 import { StyledImage, StyledStickyGridItem, StyledGridContainer, StyledCardContent, StyledBox, StyledLogo, StyledLink, StyledStoreLink } from './detailed-product-view.styles';
-import ProductItemList from '../../../product-list/components/display/product-item-list/product-item-list';
+import ProductItemList from '../../../product-list/components/display/similar-products-list/similar-products-list';
 import { translate } from 'lib/translate';
 
 import { AppDispatch } from 'index';
@@ -44,12 +44,12 @@ const DetailedProductView = (props: IProps) => {
             <Card raised={true}>
               <StyledCardContent>
                 <Box pb={1}>
-                  <Link href={props.data.link}>
+                  <Link href={props.data.link} target="_blank">
                     <Typography variant="h4" gutterBottom color="textPrimary">
                       {props.data.name}
                     </Typography>
                     <Box textAlign="left">
-                      <Typography variant="body2">{translate('MegaMall_GoTo_Product', 'Види во продавница')}</Typography>
+                      <Typography variant="body2">{translate('MegaMall_GoTo_Product', 'Види продукт')}</Typography>
                     </Box>
                   </Link>
                 </Box>
@@ -64,9 +64,9 @@ const DetailedProductView = (props: IProps) => {
                     {formatPrice(props.data.price) + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}
                   </Typography>
 
-                  <StyledLink href={props.data.storeLink}>
+                  <StyledLink href={props.data.storeLink} target="_blank">
                     <StyledLogo src={props.data.store ? findStoreLogo(props.data.store) : '/src/assets/images/main/Mega-m-original.svg'} />
-                    <Box textAlign="right" mr={2} mt={1}>
+                    <Box textAlign="center" mt={1}>
                       <Typography variant="body2">{translate('MegaMall_GoTo_Store', 'Види продавница')}</Typography>
                     </Box>
                   </StyledLink>

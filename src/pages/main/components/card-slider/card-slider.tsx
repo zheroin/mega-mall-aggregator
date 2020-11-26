@@ -80,7 +80,7 @@ const CardSlider = (props: ICardSlider) => {
           {props.data ? (
             props.data.map(res => (
               <Box key={res.id}>
-                <Link href={res.link}>
+                <Link href={res.link} target="_blank">
                   <SliderCard title={res.name.length > 25 ? res.name.substring(0, 25) + '...' : res.name} url={res.imageSource || defaultImage}>
                     <Typography variant="h4">{formatPrice(res.price) + ' ' + translate('MegaMall_Product_Price_Currency', 'МКД')}</Typography>
                   </SliderCard>

@@ -19,10 +19,10 @@ const TopBar = () => {
             </Link>
           </Grid>
           <Grid item style={{ padding: 0 }}>
-            <Link href="https://www.facebook.com">
+            <Link href="https://www.facebook.com" target="_blank">
               <FacebookIcon fontSize="small" htmlColor="#193364" />
             </Link>
-            <Link href="https://www.instagram.com">
+            <Link href="https://www.instagram.com" target="_blank">
               <InstagramIcon fontSize="small" htmlColor="#193364" />
             </Link>
           </Grid>

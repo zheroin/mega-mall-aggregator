@@ -35,7 +35,7 @@ const StoresBook = () => {
           </Box>
         </Typography>
 
-        <Grid container spacing={1}>
+        <Grid container spacing={5}>
           {allEcommerces.map(item => (
             <Grid item key={item.id} xs={12} sm={6} md={6} lg={2} xl={2}>
               <ECommerceCard storeTitle={item.ecommerceName} storeLogoPath={item.ecommerceLogo} storeLink={item.ecommerceLink} />

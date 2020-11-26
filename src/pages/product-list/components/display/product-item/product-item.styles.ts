@@ -12,30 +12,40 @@ const StyledImage = styled.img`
 `;
 
 const StyledLogo = styled.img`
-  max-width: 120px;
   width: 100%;
   max-height: 40px;
-  bottom: 25px;
-  right: 7px;
+  max-width: 120px;
+  margin: 0 auto;
+  display: block;
   box-shadow: 0px 0px 15px #d3d3d3;
-  position: absolute;
 
   @media (max-width: 768px) {
-    max-width: 98px;
-    max-height: 30px;
     width: 100%;
     float: right;
   }
 `;
 
-const StyledGrid = styled(Grid)`
-  min-height: 170px;
+const StyledStoreLink = styled(Box)`
+  text-align: center;
+  font-family: 'Roboto-Regular', sans-serif;
+  font-size: 12px;
   transition: 0.3s;
 
   @media (max-width: 768px) {
-    min-height: 140px;
+    font-size: 11px;
   }
+  @media (max-width: 420px) {
+    display: none;
+  }
+`;
 
+const StyledGrid = styled(Grid)`
+  min-height: 190px;
+  transition: 0.3s;
+
+  @media (max-width: 768px) {
+    min-height: 100px;
+  }
   &:hover {
     div {
       text-decoration: underline;
@@ -57,12 +67,12 @@ const StyledPriceBox = styled.div`
 const MobileStyledPriceBox = styled.div`
   background-image: url('/assets/images/common/red-strike.png');
   background-position: left center;
-  width: 100px;
-  height: 125px;
+  width: 80px;
+  height: 80px;
   background-size: contain;
   position: absolute;
   background-repeat: no-repeat;
-  margin-top: -10px;
+  margin-top: -24px;
 `;
 
 const StyledTextBox = styled(Box)`
@@ -72,20 +82,7 @@ const StyledTextBox = styled(Box)`
 const StyledLink = styled(Link)`
   max-width: 160px;
   width: 100%;
-`;
-
-const StyledStoreLink = styled(Box)`
-  position: absolute;
-  bottom: 5px;
-  right: 7px;
-
-  font-family: 'Roboto-Regular', sans-serif;
-  font-size: 12px;
-  transition: 0.3s;
-
-  @media (max-width: 768px) {
-    font-size: 11px;
-  }
+  margin-top: 40px;
 `;
 
 export { StyledImage, StyledLogo, StyledGrid, StyledPriceBox, MobileStyledPriceBox, StyledTextBox, StyledLink, StyledStoreLink };

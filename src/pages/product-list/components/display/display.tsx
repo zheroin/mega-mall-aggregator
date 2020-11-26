@@ -13,9 +13,9 @@ import { ROUTES } from 'consts';
 import { StyledBox, StyledLink, StyledPagination } from './display.styles';
 import { getProducts, changePageOptions } from 'store/product-list-store';
 import { PageOptions } from 'lib/models';
-import { displayData } from './product-item-list/product-item-list.data';
+import { displayData } from './similar-products-list/product-item-list.data';
 import { ListTypes } from 'lib/enums';
-import { MenuItem, menuItems } from 'lib/data';
+import { MenuItem } from 'lib/data';
 import { _EmptyState } from 'components/empty-state';
 import LoadingScreen from 'react-loading-screen';
 import { findStoreLogo } from 'utils/helpers/find-store-logo';
@@ -106,7 +106,7 @@ const Display = (props: IProps) => {
                               price={product.price === '' ? '0' : product.price}
                               discountPrice={product.promotionPrice}
                               description={''}
-                              logo={findStoreLogo(product.store)}
+                              logo={product.store}
                               link={product.link}
                               storeLink={product.storeLink}
                             />
@@ -122,7 +122,7 @@ const Display = (props: IProps) => {
               </>
             ) : (
               <>
-                <Grid container spacing={1}>
+                <Grid container spacing={5}>
                   {allEcommerces.map(store => {
                     if (store.ecommerceCategory.includes(currentCategory)) {
                       return (

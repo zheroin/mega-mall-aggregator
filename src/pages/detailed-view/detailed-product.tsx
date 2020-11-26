@@ -6,7 +6,7 @@ import ApplicationState from '../../store/application-state';
 import { connect } from 'react-redux';
 import DetailedProductView from './components/detailed-view/detailed-product-view';
 import { Box, Grid, List, ListItem, Button, Typography, Link, Container, Hidden } from '@material-ui/core';
-import { displayData } from '../product-list/components/display/product-item-list/product-item-list.data';
+import { displayData } from '../product-list/components/display/similar-products-list/product-item-list.data';
 import { Banner } from '../../components/banner';
 import CardSliderContainer from 'pages/main/components/card-slider/card-slider';
 

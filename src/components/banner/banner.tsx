@@ -13,7 +13,7 @@ const Banner = (props: BannerProps) => {
   if (props.size == 'xl') {
     return (
       <>
-        <Link href={props.url}>
+        <Link href={props.url} target="_blank">
           <Card>
             <CardMedia>
               <XLBannerImage imagesource={props.imagesource}></XLBannerImage>
@@ -25,7 +25,7 @@ const Banner = (props: BannerProps) => {
   } else if (props.size == 'l') {
     return (
       <>
-        <Link href={props.url}>
+        <Link href={props.url} target="_blank">
           <Card>
             <CardMedia>
               <LBannerImage imagesource={props.imagesource}></LBannerImage>
@@ -37,7 +37,7 @@ const Banner = (props: BannerProps) => {
   } else if (props.size == 'menu') {
     return (
       <>
-        <Link href={props.url}>
+        <Link href={props.url} target="_blank">
           <Card>
             <CardMedia>
               <MenuBannerImage imagesource={props.imagesource}></MenuBannerImage>
@@ -49,7 +49,7 @@ const Banner = (props: BannerProps) => {
   }
   return (
     <>
-      <Link href={props.url}>
+      <Link href={props.url} target="_blank">
         <Card>
           <CardMedia>
             <MenuBannerImage imagesource={props.imagesource}></MenuBannerImage>

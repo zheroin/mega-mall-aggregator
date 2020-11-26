@@ -20,8 +20,7 @@ const StyledCardMedia = styled(CardMedia)`
   background-size: contain;
   background-position: center center;
   height: 100%;
-  min-height: 280px;
-  max-height: 300px;
+  min-height: 200px;
   margin-top: 10px;
   & media {
     width: 85%;
