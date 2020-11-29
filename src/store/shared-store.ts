@@ -9,6 +9,7 @@ import { initMoment } from 'lib/moment';
 import { getCultureFromStorage } from './helpers/language-helper';
 import { MenuItem } from 'lib/data';
 import { getMenuItems } from './helpers/menu-helper';
+import { ROUTES } from 'consts';
 
 export interface SharedStore {
   searchText: string;
@@ -56,4 +57,12 @@ export const bootstrapApp = (): AppThunk => async (dispatch, store) => {
   } catch (err) {
     dispatch(UiStore.hideInitialLoader());
   }
+};
+
+// thunk
+
+export const onSearch = (search: string): AppThunk => async (dispatch, store) => {
+  dispatch(setSearchText(search));
+
+  window.location.href = `${ROUTES.SEARCH}?search=${search}`;
 };

@@ -51,7 +51,7 @@ const _App: React.FC<IApp> = (props: IApp) => {
               <Switch>
                 <Route exact path={ROUTES.MAIN} component={MainPage} />
                 <Route exact path={ROUTES.CATEGORY} component={CategoryPage} />
-                <Route path={ROUTES.LIST} component={ProductListPage} />
+                <Route path={[ROUTES.LIST, ROUTES.SEARCH]} component={ProductListPage} />
                 <Route path={ROUTES.PRODUCT} component={_DetailedProductPage} />
                 <Route path={ROUTES.STORES} component={StoresBook} />
               </Switch>

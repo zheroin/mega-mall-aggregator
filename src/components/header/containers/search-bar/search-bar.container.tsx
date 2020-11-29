@@ -24,9 +24,11 @@ const SearchBar = (props: IProps) => {
         placeholder={translate('MegaMall_Searchbar_Search', 'Пребарај')}
         size="medium"
         margin="none"
-        value={props.searchText}
-        onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-          props.onSearchTextChange(event.target.value);
+        // value={props.searchText}
+        onKeyDown={(event: any) => {
+          if (event.keyCode == 13) {
+            props.onSearchTextChange(event.target.value as string);
+          }
         }}
         inputProps={{
           style: {
@@ -50,7 +52,7 @@ const SearchBar = (props: IProps) => {
 
 const mapDispatchToProps = (dispatch: AppDispatch) => ({
   onSearchTextChange: (text: string) => {
-    dispatch(SharedStore.setSearchText(text));
+    dispatch(SharedStore.onSearch(text));
   }
 });
 

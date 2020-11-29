@@ -27,10 +27,10 @@ interface IProps extends RouteComponentProps<{ type: string }> {
   data: Models.Product.Model[];
   count: number;
   options: PageOptions;
-  subCategoryItem: MenuItem;
+  subCategoryItem?: MenuItem;
   loadingFlag: boolean;
 
-  onInit: (filters: string) => void;
+  onInit: (filters: string, search: string) => void;
   onOptionsChange: (options: PageOptions) => void;
 }
 
@@ -41,14 +41,23 @@ const Display = (props: IProps) => {
   const [pages, setPages] = useState(0);
   const indexOfLastPost = currentPage * postPerPage;
   const indexOfFirstPost = indexOfLastPost - postPerPage;
-  const currentPost = shopsData.slice(indexOfFirstPost, indexOfLastPost);
 
   const [currentCategory, setCurrentCategory] = useState('');
 
   useEffect(() => {
-    props.onInit(
-      props.subCategoryItem.children && props.subCategoryItem.children.length > 0 ? props.subCategoryItem.title + props.subCategoryItem.children.map(x => `&filter=${x.title}`).join('') : props.subCategoryItem.title
-    );
+    let filters = '';
+    let search = '';
+
+    if (props.subCategoryItem) {
+      filters =
+        props.subCategoryItem.children && props.subCategoryItem.children.length > 0 ? props.subCategoryItem.title + props.subCategoryItem.children.map(x => `&filter=${x.title}`).join('') : props.subCategoryItem.title;
+    }
+    if (props.location.search) {
+      const params = new URLSearchParams(props.location.search);
+      search = params.get('search')!;
+    }
+
+    props.onInit(filters, search);
   }, []);
 
   const listTypeChange = (type: ListTypes) => {
@@ -87,7 +96,7 @@ const Display = (props: IProps) => {
       {props.data && props.data.length ? (
         <Box p={3}>
           <Box>
-            <DisplayHeader title={props.subCategoryItem.title} page={props.options.page} count={props.count} onListTypeChange={listTypeChange} listType={listType} />
+            <DisplayHeader title={props.subCategoryItem ? props.subCategoryItem.title : 'Резултати од пребарувањето'} page={props.options.page} count={props.count} onListTypeChange={listTypeChange} listType={listType} />
           </Box>
           <Box mt={2}>
             {listType === ListTypes.Products ? (
@@ -155,8 +164,8 @@ const Display = (props: IProps) => {
 };
 
 const mapDispatchToProps = (dispatch: AppDispatch) => ({
-  onInit: (filters: string) => {
-    dispatch(getProducts(filters));
+  onInit: (filters: string, search: string) => {
+    dispatch(getProducts(filters, search));
   },
   onOptionsChange: (options: PageOptions) => {
     dispatch(changePageOptions(options));
