@@ -30,7 +30,7 @@ const MobileFilter = () => {
 
   return (
     <>
-      <Box>
+      {/* <Box>
         <StyledExpansionPanel>
           <AccordionSummary>
             <StyledBox>
@@ -54,7 +54,7 @@ const MobileFilter = () => {
             </Grid>
           </StyledDetails>
         </StyledExpansionPanel>
-      </Box>
+      </Box> */}
     </>
   );
 };
